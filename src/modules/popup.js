@@ -1,4 +1,4 @@
-const popup = ({
+export const popup = ({
   popupContent,
   popupOverlay = "overlay",
   popupOverlayActive = "overlay-active",
@@ -29,5 +29,3 @@ const popup = ({
     }
   });
 };
-
-export default popup;
