@@ -19,3 +19,13 @@ slider({
   sliderAmount: 3,
   sliderAdaptAmount: 1,
 });
+slider({
+  sliderInner: "services__inner",
+  sliderWrapper: "services__wrapper",
+  sliderSlide: "col-md-12",
+  sliderArrowNext: "services__arrow--left",
+  sliderArrowPrev: "services__arrow--right",
+  infinity: false,
+  sliderAmount: 2,
+  sliderAdaptAmount: 1,
+});

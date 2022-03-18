@@ -501,6 +501,7 @@ input.error {
 }
 .benefits-inner {
   text-align: center;
+  overflow: hidden;
 }
 .benefit-image {
   margin-bottom: 22px;
@@ -534,6 +535,9 @@ input.error {
 }
 #calc {
   background-color: #466a78;
+}
+.services__inner {
+  overflow: hidden;
 }
 .service-block {
   position: relative;
