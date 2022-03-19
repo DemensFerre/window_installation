@@ -1541,11 +1541,12 @@ input.error {
 }
 
 .services-modal {
-  display: none;
+  position: fixed;
+  transition: all 0.3s;
+  transform: translateX(-100%);
 }
 
 .services-modal--opened {
-  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

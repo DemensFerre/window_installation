@@ -7,6 +7,14 @@ popup({
   popupClose: "header-modal__close",
   popupOpen: "btn-block",
 });
+popup({
+  popupContent: "services-modal",
+  // popupOverlay: "",
+  // popupOverlayActive: "",
+  popupContentActive: "services-modal--opened",
+  popupClose: "services-modal__close",
+  popupOpen: "btn-success",
+});
 
 import { slider } from "./modules/slider";
 slider({
