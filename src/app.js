@@ -37,3 +37,6 @@ slider({
   sliderAmount: 2,
   sliderAdaptAmount: 1,
 });
+
+import { timer } from "./modules/timer";
+timer("26 Marth 2022");
