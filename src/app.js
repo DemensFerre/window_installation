@@ -49,3 +49,10 @@ sendData({
 sendData({
   nameForm: "action-form2",
 });
+
+import { zoom } from "./modules/zoomPhoto";
+zoom({
+  zoomBlock: "zoom-overlay",
+  zoomClose: "close",
+  zoomOpen: "sertificate-document",
+});
