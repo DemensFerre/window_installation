@@ -5,12 +5,10 @@ popup({
   // popupOverlayActive: "",
   popupContentActive: "header-modal--opened",
   popupClose: "header-modal__close",
-  popupOpen: "btn-block",
+  popupOpen: "btn-block.fancyboxModal",
 });
 popup({
   popupContent: "services-modal",
-  // popupOverlay: "",
-  // popupOverlayActive: "",
   popupContentActive: "services-modal--opened",
   popupClose: "services-modal__close",
   popupOpen: "btn-success",
@@ -40,3 +38,14 @@ slider({
 
 import { timer } from "./modules/timer";
 timer("26 Marth 2022");
+
+import { validate } from "./modules/validateForms";
+validate();
+
+import { sendData } from "./modules/sendForms";
+sendData({
+  nameForm: "action-form",
+});
+sendData({
+  nameForm: "action-form2",
+});
