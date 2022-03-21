@@ -56,3 +56,6 @@ zoom({
   zoomClose: "close",
   zoomOpen: "sertificate-document",
 });
+
+import { scrolls } from "./modules/scroll";
+scrolls();
