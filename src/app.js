@@ -11,7 +11,7 @@ popup({
   popupContent: "services-modal",
   popupContentActive: "services-modal--opened",
   popupClose: "services-modal__close",
-  popupOpen: "btn-success",
+  popupOpen: "btn-success.fancyboxModal",
 });
 
 import { slider } from "./modules/slider";
@@ -48,6 +48,12 @@ sendData({
 });
 sendData({
   nameForm: "action-form2",
+});
+sendData({
+  nameForm: "callback-form",
+});
+sendData({
+  nameForm: "application-form",
 });
 
 import { zoom } from "./modules/zoomPhoto";

@@ -1,5 +1,5 @@
 export const sendData = ({ nameForm }) => {
-  const form = document.querySelector(`form[name=${nameForm}]`);
+  const form = document.querySelector(`form[name='${nameForm}']`);
   const loading = document.querySelector(".loading-wrap");
   const statusBlock = document.createElement("div");
 
@@ -12,14 +12,20 @@ export const sendData = ({ nameForm }) => {
     let success = true;
 
     list.forEach((elem) => {
-      if (elem.value === "") {
+      if (
+        list[0].value !== "" &&
+        list[1].value !== "" &&
+        list[0].value.length > 3 &&
+        list[1].value.length > 5
+      ) {
+        elem.style.borderColor = successBorder;
+        success = true;
+      } else {
         elem.style.borderColor = errorBorder;
         success = false;
-      } else {
-        elem.style.borderColor = successBorder;
       }
     });
-
+    console.log(success);
     return success;
   };
 
@@ -42,6 +48,7 @@ export const sendData = ({ nameForm }) => {
       formBody[key] = val;
     });
 
+    // statusBlock.textContent = "";
     loading.style.display = "block";
     form.append(statusBlock);
 
@@ -62,17 +69,19 @@ export const sendData = ({ nameForm }) => {
         .then((data) => {
           loading.style.display = "none";
           statusBlock.textContent = successText;
-          delStatusBlock();
           clearInput();
+          delStatusBlock();
         })
         .catch((error) => {
           loading.style.display = "none";
           statusBlock.textContent = errorText;
+          clearInput();
+          delStatusBlock();
         });
     } else {
-      clearInput();
       loading.style.display = "none";
       statusBlock.textContent = errorText;
+      clearInput();
       delStatusBlock();
     }
   };
