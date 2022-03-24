@@ -1666,9 +1666,7 @@ input.error {
   bottom: 25px;
   transform: rotate(90deg);
 }
-.sertificate-document {
-  display: block;
-}
+
 .loading-wrap {
   display: none;
 }
