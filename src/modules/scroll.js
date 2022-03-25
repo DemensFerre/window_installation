@@ -6,11 +6,17 @@ export const scrolls = () => {
     blockScroll.scrollIntoView({ behavior: "smooth" });
   });
 
-  window.addEventListener("scroll", () => {
+  const checkItemScroll = () => {
     if (document.documentElement.scrollTop > 800) {
       itemScroll.style.display = "block";
     } else if (document.documentElement.scrollTop < 800) {
       itemScroll.style.display = "none";
     }
+  };
+
+  window.addEventListener("scroll", () => {
+    checkItemScroll();
   });
+
+  checkItemScroll();
 };
