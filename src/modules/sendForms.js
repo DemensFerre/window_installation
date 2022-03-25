@@ -25,7 +25,6 @@ export const sendData = ({ nameForm }) => {
         success = false;
       }
     });
-    console.log(success);
     return success;
   };
 
@@ -40,6 +39,7 @@ export const sendData = ({ nameForm }) => {
   };
 
   const submitForm = () => {
+    const calcTotalValue = document.getElementById("calc-total").value;
     const formInputs = form.querySelectorAll("input");
     const formData = new FormData(form);
     const formBody = {};
@@ -47,6 +47,8 @@ export const sendData = ({ nameForm }) => {
     formData.forEach((val, key) => {
       formBody[key] = val;
     });
+
+    formBody["calc-total"] = calcTotalValue;
 
     loading.style.display = "block";
     form.append(statusBlock);

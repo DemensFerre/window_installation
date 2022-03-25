@@ -5,10 +5,6 @@ export const calc = () => {
   const calcInput = document.getElementById("calc-input");
   const calcTotal = document.getElementById("calc-total");
 
-  const formBody = {};
-
-  let calcTimeout;
-
   if (!calcBlock) {
     return;
   }
@@ -18,7 +14,6 @@ export const calc = () => {
     const calcTypeMaterialValue =
       +calcTypeMaterial.options[calcTypeMaterial.selectedIndex].value;
     const calcInputValue = +calcInput.value;
-    const formData = new FormData(calcBlock);
 
     let totalPtice = 0;
 
@@ -26,34 +21,13 @@ export const calc = () => {
       totalPtice = Math.floor(
         calcTypeValue * calcTypeMaterialValue * calcInputValue
       );
-
-      formData.forEach((key, val) => {
-        formBody[val] = +key;
-      });
-
-      formBody["calc-total"] = totalPtice;
     } else {
       totalPtice = 0;
     }
-
     calcTotal.value = totalPtice;
   };
 
-  const sendData = (data) => {
-    return fetch("https://jsonplaceholder.typicode.com/posts", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    }).then((res) => res.json());
-  };
-
-  calcBlock.addEventListener("input", async () => {
+  calcBlock.addEventListener("input", () => {
     countCalc();
-    clearTimeout(calcTimeout);
-    calcTimeout = setTimeout(() => {
-      sendData(formBody);
-    }, 5000);
   });
 };
