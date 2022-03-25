@@ -65,3 +65,6 @@ zoom({
 
 import { scrolls } from "./modules/scroll";
 scrolls();
+
+import { calc } from "./modules/calc";
+calc();

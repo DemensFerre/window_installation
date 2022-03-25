@@ -48,7 +48,6 @@ export const sendData = ({ nameForm }) => {
       formBody[key] = val;
     });
 
-    // statusBlock.textContent = "";
     loading.style.display = "block";
     form.append(statusBlock);
 
