@@ -6,6 +6,7 @@ export const popup = ({
   popupClose,
   popupOpen,
 }) => {
+  const body = document.querySelector("body");
   const content = document.querySelector(`.${popupContent}`);
   const overlay = document.querySelector(`.${popupOverlay}`);
 
@@ -14,6 +15,7 @@ export const popup = ({
       e.preventDefault();
       content.classList.add(popupContentActive);
       overlay.classList.add(popupOverlayActive);
+      body.classList.add("active");
     }
     if (
       e.target.closest(`.${popupClose}`) ||
@@ -21,6 +23,7 @@ export const popup = ({
     ) {
       content.classList.remove(popupContentActive);
       overlay.classList.remove(popupOverlayActive);
+      body.classList.remove("active");
     }
   });
 };

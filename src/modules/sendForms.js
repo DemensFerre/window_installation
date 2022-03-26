@@ -39,10 +39,15 @@ export const sendData = ({ nameForm }) => {
   };
 
   const submitForm = () => {
-    const calcTotalValue = document.getElementById("calc-total").value;
     const formInputs = form.querySelectorAll("input");
     const formData = new FormData(form);
     const formBody = {};
+
+    let calcTotalValue;
+
+    if (document.getElementById("calc__form")) {
+      calcTotalValue = document.getElementById("calc-total").value;
+    }
 
     formData.forEach((val, key) => {
       formBody[key] = val;
